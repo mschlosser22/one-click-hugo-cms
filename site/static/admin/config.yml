@@ -5,6 +5,32 @@ media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
+  - name: "lp"
+    label: "Landing Page"
+    folder: "site/content/lps"
+    create: true
+    fields:
+      - label: "Home Section"
+        name: "sections"
+        widget: "list"
+        types:
+          - label: "Carousel"
+            name: "carousel"
+            widget: object
+            fields:
+              - {label: Header, name: header, widget: string, default: "Image Gallery"}
+              - {label: Template, name: template, widget: string, default: "carousel.html"}
+              - label: Images
+                name: images
+                widget: list
+                field: {label: Image, name: image, widget: image}
+          - label: "Spotlight"
+            name: "spotlight"
+            widget: object
+            fields:
+              - {label: Header, name: header, widget: string, default: "Spotlight"}
+              - {label: Template, name: template, widget: string, default: "spotlight.html"}
+              - {label: Text, name: text, widget: text, default: "Hello World"}
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
     folder: "site/content/post" # The path to the folder where the documents are stored
@@ -15,6 +41,27 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Intro Blurb", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Home Section"
+        name: "sections"
+        widget: "list"
+        types:
+          - label: "Carousel"
+            name: "carousel"
+            widget: object
+            fields:
+              - {label: Header, name: header, widget: string, default: "Image Gallery"}
+              - {label: Template, name: template, widget: string, default: "carousel.html"}
+              - label: Images
+                name: images
+                widget: list
+                field: {label: Image, name: image, widget: image}
+          - label: "Spotlight"
+            name: "spotlight"
+            widget: object
+            fields:
+              - {label: Header, name: header, widget: string, default: "Spotlight"}
+              - {label: Template, name: template, widget: string, default: "spotlight.html"}
+              - {label: Text, name: text, widget: text, default: "Hello World"}
   - name: "pages"
     label: "Pages"
     files:
@@ -37,6 +84,27 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Values", name: "values", widget: "object", fields: [
               {label: "Heading", name: "heading", widget: string},
               {label: "Text", name: "text", widget: "text"}]}
+          - label: "Home Section"
+            name: "sections"
+            widget: "list"
+            types:
+              - label: "Carousel"
+                name: "carousel"
+                widget: object
+                fields:
+                  - {label: Header, name: header, widget: string, default: "Image Gallery"}
+                  - {label: Template, name: template, widget: string, default: "carousel.html"}
+                  - label: Images
+                    name: images
+                    widget: list
+                    field: {label: Image, name: image, widget: image}
+              - label: "Spotlight"
+                name: "spotlight"
+                widget: object
+                fields:
+                  - {label: Header, name: header, widget: string, default: "Spotlight"}
+                  - {label: Template, name: template, widget: string, default: "spotlight.html"}
+                  - {label: Text, name: text, widget: text, default: "Hello World"}
       - file: "site/content/contact/_index.md"
         label: "Contact Page"
         name: "contact"
